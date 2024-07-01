@@ -1,3 +1,3 @@
-# `sudo-no-password.sh`
+# `disable-password-prompt.sh`
 
-Disable password when elevating privilege, for both `sudo` and `polkit`.
+Disable password prompt when elevating privilege, for both `sudo` and `polkit`.
