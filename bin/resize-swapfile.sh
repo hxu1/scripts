@@ -15,7 +15,7 @@ function usage () {
   exit 1
 }
 
-SIZE_PARSED=$(./utils/parse_number.py "${SIZE_MIN}" "${SIZE_MAX}" "${SIZE}")
+SIZE_PARSED=$(./util/parse_number.py "${SIZE_MIN}" "${SIZE_MAX}" "${SIZE}")
 if [[ "${SIZE_PARSED}" == '-1' ]]; then
   usage
 fi
