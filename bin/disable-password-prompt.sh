@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 if [[ $EUID -eq 0 ]]; then
-  echo 'this script cannot be run with sudo directly'
+  echo 'this script cannot be ran with sudo directly'
   exit 1
 fi
 
