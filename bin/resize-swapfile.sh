@@ -15,6 +15,10 @@ function usage () {
   exit 1
 }
 
+if [[ $SIZE == '-h' ]]; then
+  usage
+fi
+
 SIZE_PARSED=$(./util/parse_number.py $SIZE_MIN $SIZE_MAX $SIZE)
 if [[ $SIZE_PARSED -eq -1 ]]; then
   usage
