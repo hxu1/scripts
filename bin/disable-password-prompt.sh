@@ -11,6 +11,7 @@ fi
 
 SUDOERS_FILE="/etc/sudoers.d/disable-password-prompt-${USER}"
 echo "${USER} ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee $SUDOERS_FILE
+sudo chown root:root $SUDOERS_FILE
 sudo chmod 440 $SUDOERS_FILE
 
 POLKIT_FILE='/etc/polkit-1/rules.d/10-disable-password-prompt.rules'
@@ -19,6 +20,7 @@ echo "  if (subject.user === \"${USER}\") {"       | sudo tee --append $POLKIT_F
 echo '    return polkit.Result.YES;'               | sudo tee --append $POLKIT_FILE
 echo '  }'                                         | sudo tee --append $POLKIT_FILE
 echo '});'                                         | sudo tee --append $POLKIT_FILE
+sudo chown root:polkitd $POLKIT_FILE
 sudo chmod 440 $POLKIT_FILE
 
 echo
